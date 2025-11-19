@@ -10,7 +10,7 @@
   "styles": [
     "styles/dispatch-theme.css"
   ],
-  "manifest": "https://raw.githubusercontent.com/zaneobelisco-ctrl/dispatch-rpg/main/system.json",
+  "manifest": "https://raw.githubusercontent.com/zaneobelisco-ctrl/dispatch-rpg/refs/heads/main/dispatch-rpg/system.json",
   "download": "https://github.com/zaneobelisco-ctrl/dispatch-rpg/releases/download/asd/dispatch-rpg-final-v3.zip",
   "compatibility": {
     "minimum": "10",
