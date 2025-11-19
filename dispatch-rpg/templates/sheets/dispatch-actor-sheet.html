@@ -1,0 +1,120 @@
+<section class="dispatch-sheet actor-sheet">
+  <div class="actor-sheet-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <button class="sidebar-btn" data-tab="perfil" title="Perfil">👤</button>
+        <button class="sidebar-btn" data-tab="pericias" title="Perícias">🎯</button>
+        <button class="sidebar-btn" data-tab="historico" title="Histórico">📜</button>
+        <button class="sidebar-btn" data-tab="config" title="Config">⚙️</button>
+      </div>
+    </aside>
+
+    <main class="actor-main">
+      <header class="actor-sheet-banner">
+        <div class="portrait-frame">
+          <img class="portrait-img" src="{{actor.img}}" alt="portrait"/>
+          <input type="file" class="portrait-uploader" style="display:none"/>
+        </div>
+
+        <div class="header-info">
+          <div class="actor-name-row">
+            <h1 class="actor-name">{{actor.name}}</h1>
+            <div class="actor-tags">
+              <div class="tag level">Lv. 1</div>
+            </div>
+          </div>
+          <div class="actor-subinfo">
+            <div class="sub-left">
+              <div class="mini-box">
+                <label>Data de Nascimento</label>
+                <input name="system.details.birthdate" value="{{system.details.birthdate}}"/>
+              </div>
+              <div class="mini-box">
+                <label>Alter Ego</label>
+                <input name="system.details.alterEgo" value="{{system.details.alterEgo}}"/>
+              </div>
+            </div>
+            <div class="sub-right">
+              <div class="mini-box">
+                <label>Sanidade</label>
+                <input name="system.resources.sanity.value" value="{{system.resources.sanity.value}}"/>
+              </div>
+              <div class="mini-box">
+                <label>Defesa</label>
+                <input name="system.resources.defense.value" value="{{system.resources.defense.value}}"/>
+              </div>
+              <div class="mini-box">
+                <label>Experiência</label>
+                <input name="system.resources.xp.value" value="{{system.resources.xp.value}}"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="actor-body">
+        <div class="left-column">
+          <section class="tab-section" data-tab="perfil">
+            <div class="attributes-card">
+              <h3>Atributos</h3>
+              <div class="attributes-grid">
+                <div class="attribute-card"><label>Força</label><div class="attr-value"><input type="number" name="system.attributes.for.value" value="{{system.attributes.for.value}}"/></div></div>
+                <div class="attribute-card"><label>Vigor</label><div class="attr-value"><input type="number" name="system.attributes.vig.value" value="{{system.attributes.vig.value}}"/></div></div>
+                <div class="attribute-card"><label>Agi</label><div class="attr-value"><input type="number" name="system.attributes.agi.value" value="{{system.attributes.agi.value}}"/></div></div>
+                <div class="attribute-card"><label>Carisma</label><div class="attr-value"><input type="number" name="system.attributes.car.value" value="{{system.attributes.car.value}}"/></div></div>
+                <div class="attribute-card"><label>Intelecto</label><div class="attr-value"><input type="number" name="system.attributes.int.value" value="{{system.attributes.int.value}}"/></div></div>
+                <div class="attribute-card"><label>Poder (POD)</label><div class="attr-value"><input type="number" name="system.attributes.pod.value" value="{{system.attributes.pod.value}}"/></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-section hidden" data-tab="pericias">
+            <div class="skills-card">
+              <h3>Perícias Básicas</h3>
+              <div class="skill-grid">
+                {{#each rows}}
+                <div class="skill-card">
+                  <div class="skill-label">{{label}}</div>
+                  <div class="skill-attr">{{attrLabel}}</div>
+                  <div class="skill-mod"><input type="number" name="system.skills.{{key}}.value" value="{{value}}"/></div>
+                  <div class="skill-roll"><button class="skill-roll-btn" data-attr="{{attrKey}}" data-skillkey="{{key}}">Rolar</button></div>
+                </div>
+                {{/each}}
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-section hidden" data-tab="historico">
+            <div class="history-card">
+              <h4>Histórico</h4>
+              <textarea name="system.history.summary">{{system.history.summary}}</textarea>
+              <h4>Perfil Psicológico</h4>
+              <textarea name="system.history.psychProfile">{{system.history.psychProfile}}</textarea>
+            </div>
+            <div class="aspirations-card">
+              <h4>Aspirações</h4>
+              <textarea name="system.aspirações">{{system.aspirações}}</textarea>
+            </div>
+          </section>
+
+          <section class="tab-section hidden" data-tab="config">
+            <div class="attributes-card">
+              <h4>Configurações</h4>
+              <p style="color:var(--muted)">Sem opções por enquanto.</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <div class="resources-stack" id="right-resources">
+            <div class="resource-box"><label>Mobilidade</label><input type="number" name="system.stats.mobility.value" value="{{system.stats.mobility.value}}"/></div>
+            <div class="resource-box"><label>Iniciativa</label><input type="number" name="system.stats.init.value" value="{{system.stats.init.value}}"/></div>
+            <div class="resource-box"><label>Pontos de Ação</label><input type="number" name="system.resources.actionPoints.value" value="{{system.resources.actionPoints.value}}"/></div>
+            <div class="resource-box"><label>Pontos de Poder</label><input type="number" name="system.resources.powerPoints.value" value="{{system.resources.powerPoints.value}}"/></div>
+            <div class="resource-box"><label>Taxa de Cura</label><input type="number" name="system.stats.healRate.value" value="{{system.stats.healRate.value}}"/></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</section>

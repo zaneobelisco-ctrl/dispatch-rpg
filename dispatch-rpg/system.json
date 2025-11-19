@@ -1,0 +1,47 @@
+{
+  "id": "dispatch-rpg",
+  "name": "dispatch-rpg",
+  "title": "Dispatch RPG",
+  "version": "1.0.2",
+  "author": "zaneobelisco-ctrl",
+  "scripts": [
+    "scripts/dispatch-sheet.js"
+  ],
+  "styles": [
+    "styles/dispatch-theme.css"
+  ],
+  "manifest": "https://raw.githubusercontent.com/zaneobelisco-ctrl/dispatch-rpg/main/system.json",
+  "download": "https://github.com/zaneobelisco-ctrl/dispatch-rpg/releases/download/v1.0.0/dispatch-rpg.zip",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "13"
+  },
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": [
+          "system.history.summary",
+          "system.history.psychProfile",
+          "system.aspirações"
+        ],
+        "filePathFields": {
+          "img": [
+            "IMAGE"
+          ]
+        }
+      }
+    }
+  },
+  "actors": [
+    {
+      "name": "Dispatch Character",
+      "type": "character",
+      "template": "templates/sheets/dispatch-actor-sheet.html"
+    }
+  ],
+  "sheetClasses": {
+    "character": {
+      "dispatch": "DispatchActorSheet"
+    }
+  }
+}
